@@ -1,23 +1,25 @@
-function Totalprice (item){
-    let totalprice=0;
+// 購物車商品總價格計算函數
+function calculateTotalPrice(items) {
+    let totalPrice = 0;
 
-    item.forEach(item=> {
-        totalprice+= item.price*item.quantity;
+    // 遍歷購物車中的每個商品
+    items.forEach(item => {
+        // 將每個商品的價格加到總價格中
+        totalPrice += item.price * item.quantity;
     });
-        return totalprice;
+
+    return totalPrice;
 }
 
-let cart=[];
+// 模擬購物車中的商品
+let cartItems = [
+    { name: 'iPhone', price: 999, quantity: 1 },
+    { name: 'MacBook', price: 1999, quantity: 1 },
+    { name: 'iPad', price: 499, quantity: 2 }
+];
 
-let itemcount = parseint(prompt('請輸入商品數:'));
+// 計算購物車中商品的總價格
+let totalPrice = calculateTotalPrice(cartItems);
 
-for(let i=o;i<itemcount;i++){
-    let itemname=promtp("商品名稱:");
-    let itemprice=parseFloat(prompt("商品價格"));
-    let itemquantity=parseInt(prompt("商品數量"));
-
-    cart.push({name:itemname, price: itemprice, quantity:itemquantity});
-}
-
-let totalprice= Tatalprice(car);
-console.log('Total shopping price:',totalprice);
+// 輸出結果
+console.log('購物車總價格:', totalPrice);
